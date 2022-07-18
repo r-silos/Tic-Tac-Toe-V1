@@ -1,0 +1,1 @@
+#Lets Start out with some Pseduocode to help us plan out this project
