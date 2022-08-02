@@ -81,16 +81,13 @@ class Display
             end
         i += 1
         end
-        #(1) @game_board[0][0] == sym and @game_board[1][1] == sym and @game_board[2][2] == sym  (2) @game_board[0][2] == sym and @game_board[1][1] == sym and @game_board[2][0] == sym
+        
         if  @game_board[0][2] == sym && @game_board[1][1] == sym && @game_board[2][0] == sym || @game_board[0][0] == sym && @game_board[1][1] == sym && @game_board[2][2] == sym 
             puts "\nwe have a full diagonal"
             return @game_is_over = true
         end
     end
-=begin
-    def winner_name_printer(mark)
-        if 
-=end
+
 end
 
     
@@ -108,7 +105,7 @@ name2 = gets.chomp
 player1 = Player.new(name1)
 player2 = Player.new(name2)
 game = Display.new
-#game_is_over = false
+
 
 print "\nHello #{player1.name} and #{player2.name}, prepare yourself for an epic game of TIC-TAC-TOE. The instructions below will explain how the game is played\n"
 print "\nThis is the game board that will keep track of where X's and O's are on the board\n"
@@ -119,6 +116,7 @@ game.display_position_picker
 i = 2
 
 until game.game_is_over == true 
+    #if game board is filled, it will be a draw
     if i == 11
         game.game_is_over = true
     elsif i % 2 == 0
